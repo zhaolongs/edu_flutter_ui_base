@@ -50,6 +50,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.14.11"
+  common_utils:
+    dependency: transitive
+    description:
+      name: common_utils
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "1.1.3"
   convert:
     dependency: transitive
     description:
@@ -71,6 +78,38 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "0.1.3"
+  custom_refresh_plugin:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: master
+      resolved-ref: "47dcc85c1767153eca8bfb886613725245a122d4"
+      url: "https://github.com/zhaolongs/flutter_custom_refresh_plugin.git"
+    source: git
+    version: "0.0.1"
+  decimal:
+    dependency: transitive
+    description:
+      name: decimal
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.3.5"
+  extended_nested_scroll_view:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: master
+      resolved-ref: "99286acc0b6001ec974b1aac18f224f74271f456"
+      url: "https://github.com/fluttercandies/extended_nested_scroll_view.git"
+    source: git
+    version: "0.3.8"
+  flustars:
+    dependency: "direct main"
+    description:
+      name: flustars
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.2.6+1"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -88,11 +127,32 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_page_indicator:
+    dependency: transitive
+    description:
+      name: flutter_page_indicator
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.0.3"
+  flutter_swiper:
+    dependency: "direct main"
+    description:
+      name: flutter_swiper
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "1.1.6"
   flutter_test:
     dependency: "direct dev"
     description: flutter
     source: sdk
     version: "0.0.0"
+  fluttertoast:
+    dependency: "direct main"
+    description:
+      name: fluttertoast
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "3.1.3"
   http:
     dependency: transitive
     description:
@@ -121,6 +181,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "0.16.0"
+  jpush_flutter:
+    dependency: "direct main"
+    description:
+      name: jpush_flutter
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.1.0"
   matcher:
     dependency: transitive
     description:
@@ -191,6 +258,27 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "2.0.5"
+  rational:
+    dependency: transitive
+    description:
+      name: rational
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.3.7"
+  shared_preferences:
+    dependency: "direct main"
+    description:
+      name: shared_preferences
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.5.4+9"
+  shared_preferences_platform_interface:
+    dependency: transitive
+    description:
+      name: shared_preferences_platform_interface
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "1.0.1"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -252,6 +340,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "0.2.5"
+  transformer_page_view:
+    dependency: transitive
+    description:
+      name: transformer_page_view
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.1.6"
   typed_data:
     dependency: transitive
     description:

@@ -27,17 +27,56 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
 
+  ## 极光推送插件
+  #  jpush_flutter:
+  #    # git 依赖方式
+  #    git:
+  #      # git 依赖的地址
+  #      url: git://github.com/jpush/jpush-flutter-plugin.git
+  #      # git 仓库中的分支
+  #      ref: master
+
+  # 极光推送插件
+  #  jpush_flutter:
+  #    path: ../jpush-flutter-plugin
+
+  jpush_flutter: 0.1.0
+  #  custom_refresh_plugin:
+  #    path: ../../custom_refresh_plugin/custom_refresh_plugin
+  custom_refresh_plugin:
+    #git 方式依赖
+    git:
+      #仓库地址
+      url: https://github.com/zhaolongs/flutter_custom_refresh_plugin.git
+      # 分支
+      ref: master
+
+
+  # 弹框
+  fluttertoast: ^3.0.3
   cached_network_image: ^2.0.0
   #  下拉刷新组件
   pull_to_refresh: ^1.5.7
+  # 数组缓存
+  #NSUserDefaults (on iOS) and SharedPreferences (on Android)
+  shared_preferences: any
+  #Dart常用工具类库。包含日期，正则，倒计时，定时任务，时间轴等工具类
+  flustars: ^0.2.6+1
+  # 轮播组件
+  flutter_swiper: ^1.1.6
     # 状态管理之provide
     #provide是谷歌官方出品的一个状态管理框架flutter-provide，
     #它允许在小部件树中传递数据，它被设计为ScopedModel的替代品，允许我们更加灵活地处理数据类型和数据
     #  当状态发生变化时，widget树会更新指定的节点，不会进行整颗widget树的更新
     #  Provide有泛型的优势，相当于namespace的特性，使用过vuex的应该知道namespace的重要性，它将我们的状态分离开来
-    #  Provide被设计为ScopedModel的替代品，同样也有和ScopedModel的易用性
+  #  Provide被设计为ScopedModel的替代品，同样也有和ScopedModel的易用性
   #  Provide提供了Provide.stream可以以处理流的方式处理数据，不过目前还存在一些问题
   provide: ^1.0.2
+
+  extended_nested_scroll_view:
+    git:
+      url: https://github.com/fluttercandies/extended_nested_scroll_view.git
+      ref: master
 
 dev_dependencies:
   flutter_test:
