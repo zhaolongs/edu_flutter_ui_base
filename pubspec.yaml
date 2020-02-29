@@ -51,7 +51,7 @@ dependencies:
       # 分支
       ref: master
 
-
+  video_player: ^0.6.4
   # 弹框
   fluttertoast: ^3.0.3
   cached_network_image: ^2.0.0
