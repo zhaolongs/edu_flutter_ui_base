@@ -3,8 +3,9 @@ import 'dart:ui';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:mdemo1/main/main_find2_pages.dart';
+import 'package:mdemo1/bean/bean_video.dart';
 import 'package:video_player/video_player.dart';
+
 
 class FindItemPage extends StatefulWidget {
   VideoModel videoModel;
@@ -175,13 +176,17 @@ class FindItemPageState extends State<FindItemPage> {
             buildLikeButtion(
                 assetImage: "images/2.0/comment_icon.png",
                 msgCount: 233,
-                callback: () {}),
+                callback: () {
+                  showPub(index: 1);
+                }),
 
             ///转发
             buildLikeButtion(
                 assetImage: "images/2.0/transpond_icon.png",
                 msgCount: 223,
-                callback: () {}),
+                callback: () {
+                  showPub();
+                }),
           ],
         ),
       ),
@@ -285,14 +290,202 @@ class FindItemPageState extends State<FindItemPage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
-                  Text("@早起的年轻人",style: TextStyle(fontWeight: FontWeight.w500,fontSize: 17,color: Colors.white),),
-                  SizedBox(height: 10,),
-                  Text("三十年河东，三十年河西，莫斯少年穷，哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈",style: TextStyle(fontWeight: FontWeight.normal,fontSize: 16,color: Colors.white),)
+                  Text(
+                    "@早起的年轻人",
+                    style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 17,
+                        color: Colors.white),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    "三十年河东，三十年河西，莫斯少年穷，哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈",
+                    style: TextStyle(
+                        fontWeight: FontWeight.normal,
+                        fontSize: 16,
+                        color: Colors.white),
+                  )
                 ],
               ),
             )
           ],
         ),
+      ),
+    );
+  }
+
+  void showPub({index = 0}) {
+    showModalBottomSheet(
+        context: context,
+        builder: (BuildContext context) {
+          if (index == 0) {
+            return _shareWidget();
+          } else {
+            return _commentWidget();
+          }
+        });
+  }
+
+  Widget _shareWidget() {
+    return new Container(
+      height: 250.0,
+      child: new Column(
+        children: <Widget>[
+          new Padding(
+            padding: EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 0.0),
+            child: new Container(
+              height: 190.0,
+              child: new GridView.builder(
+                gridDelegate: new SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 4,
+                    mainAxisSpacing: 5.0,
+                    childAspectRatio: 1.0),
+                itemBuilder: (BuildContext context, int index) {
+                  return new Column(
+                    children: <Widget>[
+                      new Padding(
+                        padding: EdgeInsets.fromLTRB(0.0, 6.0, 0.0, 6.0),
+                        child: Image.asset(
+                          urlItems[index],
+                          width: 48,
+                        ),
+                      ),
+                      new Text(nameItems[index])
+                    ],
+                  );
+                },
+                itemCount: nameItems.length,
+              ),
+            ),
+          ),
+          new Container(
+            height: 0.5,
+            color: Colors.blueGrey,
+          ),
+          new Center(
+            child: new Padding(
+              padding: EdgeInsets.fromLTRB(0.0, 8.0, 0.0, 8.0),
+              child: GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: new Text(
+                    '取  消',
+                    style:
+                        new TextStyle(fontSize: 18.0, color: Colors.blueGrey),
+                  )),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  List<String> nameItems = <String>['微信', '朋友圈', 'QQ', 'QQ空间', '微博', '链接'];
+
+  // 这个urlItems这里没有用到
+  List<String> urlItems = <String>[
+    'images/2.0/wexin_icon.png',
+    'images/2.0/friend_icon.png',
+    'images/2.0/qq_icon.png',
+    'images/2.0/qq_zon_icon.png',
+    'images/2.0/weibo_icon.png',
+    'images/2.0/link_icon.png',
+  ];
+
+  Widget _commentWidget() {
+    return new Container(
+      height: 260.0,
+      child: new Column(
+        children: <Widget>[
+          SizedBox(
+            height: 12,
+          ),
+          Stack(
+            children: <Widget>[
+              Align(
+                alignment: Alignment(0, 0),
+                child: Text(
+                  "评论区",
+                  style: TextStyle(color: Colors.black, fontSize: 16),
+                ),
+              ),
+              Align(
+                alignment: Alignment(1, 0),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: Padding(
+                    padding: EdgeInsets.all(4),
+                    child: Icon(
+                      Icons.clear,
+                      size: 18,
+                    ),
+                  ),
+                ),
+              )
+            ],
+          ),
+          SizedBox(
+            height: 12,
+          ),
+          Expanded(
+            child: new Container(
+              height: 0.5,
+              child: ListView.builder(
+                itemBuilder: (BuildContext context, int index) {
+                  return Container(
+                    margin: EdgeInsets.only(top: 20),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Padding(
+                          padding: EdgeInsets.only(left: 12, right: 12),
+                          child: Image.asset(
+                            'images/2.0/wexin_icon.png',
+                            width: 28,
+                          ),
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisSize: MainAxisSize.min,
+                          children: <Widget>[
+                            Text(
+                              "显示卡的情人",
+                              style: TextStyle(
+                                  fontSize: 14, color: Colors.grey),
+                            ),
+                            Text(
+                              "以身相许就是报答了哈，期待更新啊？？",
+                              style:
+                                  TextStyle(fontSize: 16, color: Colors.black),
+                            ),
+                            Container(
+                              margin: EdgeInsets.only(top: 6),
+                              padding: EdgeInsets.only(left: 6,right: 6),
+                              decoration: BoxDecoration(
+                                color: Colors.grey[400],
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(3),
+                                ),
+                              ),
+                              child: Text("9小时前",style: TextStyle(fontSize: 10),),
+                            )
+                          ],
+                        )
+                      ],
+                    ),
+                  );
+                },
+                itemCount: 10,
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

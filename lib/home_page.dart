@@ -6,6 +6,7 @@ import 'package:mdemo1/main/main_home_pages.dart';
 import 'package:mdemo1/main/main_my_pages.dart';
 
 import 'main/main_find2_pages.dart';
+import 'main/main_find3_pages.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -35,8 +36,9 @@ class HomePageState extends State {
     ///论坛页面
     MainForumPage(),
     ///发现页面
-    MainFind2Page(),
+//    MainFind2Page(),
 //    MainFindPage(),
+    MainFind3Page(),
     ///我的页面
     MainMyPage(),
   ];

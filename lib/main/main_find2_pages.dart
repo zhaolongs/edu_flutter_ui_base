@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:mdemo1/bean/bean_video.dart';
 import 'package:video_player/video_player.dart';
 
 import 'item/findI_item_page.dart';
@@ -11,20 +12,6 @@ class MainFind2Page extends StatefulWidget {
   State<StatefulWidget> createState() {
     return MainFindPageState();
   }
-}
-
-class VideoModel {
-  String videoName;
-  String videoUrl;
-  String videoImag;
-
-  ///是否关注
-  bool isAttention;
-
-  ///是否喜欢
-  bool isLike;
-  num pariseCount;
-  VideoPlayerController controller;
 }
 
 class MainFindPageState extends State with SingleTickerProviderStateMixin {
