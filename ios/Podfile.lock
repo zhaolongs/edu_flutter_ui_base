@@ -2,73 +2,71 @@ PODS:
   - custom_refresh_plugin (0.0.1):
     - Flutter
   - Flutter (1.0.0)
+  - flutter_guidance_plugin (0.0.1):
+    - Flutter
+  - flutter_plugin_android_lifecycle (0.0.1):
+    - Flutter
   - fluttertoast (0.0.2):
     - Flutter
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
-  - JCore (2.1.8)
-  - JPush (3.2.8):
-    - JCore (< 3.0.0, >= 2.0.0)
-  - jpush_flutter (0.0.2):
-    - Flutter
-    - JPush
-  - path_provider (0.0.1):
-    - Flutter
   - shared_preferences (0.0.1):
+    - Flutter
+  - shared_preferences_macos (0.0.1):
+    - Flutter
+  - shared_preferences_web (0.0.1):
     - Flutter
   - sqflite (0.0.1):
     - Flutter
     - FMDB (~> 2.7.2)
-  - video_player (0.0.1):
-    - Flutter
 
 DEPENDENCIES:
   - custom_refresh_plugin (from `.symlinks/plugins/custom_refresh_plugin/ios`)
   - Flutter (from `Flutter`)
+  - flutter_guidance_plugin (from `.symlinks/plugins/flutter_guidance_plugin/ios`)
+  - flutter_plugin_android_lifecycle (from `.symlinks/plugins/flutter_plugin_android_lifecycle/ios`)
   - fluttertoast (from `.symlinks/plugins/fluttertoast/ios`)
-  - jpush_flutter (from `.symlinks/plugins/jpush_flutter/ios`)
-  - path_provider (from `.symlinks/plugins/path_provider/ios`)
   - shared_preferences (from `.symlinks/plugins/shared_preferences/ios`)
+  - shared_preferences_macos (from `.symlinks/plugins/shared_preferences_macos/ios`)
+  - shared_preferences_web (from `.symlinks/plugins/shared_preferences_web/ios`)
   - sqflite (from `.symlinks/plugins/sqflite/ios`)
-  - video_player (from `.symlinks/plugins/video_player/ios`)
 
 SPEC REPOS:
   trunk:
     - FMDB
-    - JCore
-    - JPush
 
 EXTERNAL SOURCES:
   custom_refresh_plugin:
     :path: ".symlinks/plugins/custom_refresh_plugin/ios"
   Flutter:
     :path: Flutter
+  flutter_guidance_plugin:
+    :path: ".symlinks/plugins/flutter_guidance_plugin/ios"
+  flutter_plugin_android_lifecycle:
+    :path: ".symlinks/plugins/flutter_plugin_android_lifecycle/ios"
   fluttertoast:
     :path: ".symlinks/plugins/fluttertoast/ios"
-  jpush_flutter:
-    :path: ".symlinks/plugins/jpush_flutter/ios"
-  path_provider:
-    :path: ".symlinks/plugins/path_provider/ios"
   shared_preferences:
     :path: ".symlinks/plugins/shared_preferences/ios"
+  shared_preferences_macos:
+    :path: ".symlinks/plugins/shared_preferences_macos/ios"
+  shared_preferences_web:
+    :path: ".symlinks/plugins/shared_preferences_web/ios"
   sqflite:
     :path: ".symlinks/plugins/sqflite/ios"
-  video_player:
-    :path: ".symlinks/plugins/video_player/ios"
 
 SPEC CHECKSUMS:
   custom_refresh_plugin: 6cf6eade81b0591b0ab28662247bef05eaa53446
   Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
+  flutter_guidance_plugin: 53300db18f05527c516f7e8f8708ce927b45dd44
+  flutter_plugin_android_lifecycle: 47de533a02850f070f5696a623995e93eddcdb9b
   fluttertoast: b644586ef3b16f67fae9a1f8754cef6b2d6b634b
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
-  JCore: a7f1dead960d77a97717c73ea8b0aa5b33706491
-  JPush: 8ce888d6dedfa417e90c8b6bc87405a16ce2e699
-  jpush_flutter: d7e3a79466eb9447fd940233f02661b514f137c6
-  path_provider: fb74bd0465e96b594bb3b5088ee4a4e7bb1f2a9d
   shared_preferences: 430726339841afefe5142b9c1f50cb6bd7793e01
+  shared_preferences_macos: f3f29b71ccbb56bf40c9dd6396c9acf15e214087
+  shared_preferences_web: 141cce0c3ed1a1c5bf2a0e44f52d31eeb66e5ea9
   sqflite: 4001a31ff81d210346b500c55b17f4d6c7589dd0
-  video_player: 3964090a33353060ed7f58aa6427c7b4b208ec21
 
 PODFILE CHECKSUM: 3dbe063e9c90a5d7c9e4e76e70a821b9e2c1d271
 

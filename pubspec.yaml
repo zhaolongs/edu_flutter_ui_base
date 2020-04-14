@@ -50,10 +50,21 @@ dependencies:
       url: https://github.com/zhaolongs/flutter_custom_refresh_plugin.git
       # 分支
       ref: master
-
+  #新手蒙版引导插件
+  flutter_guidance_plugin:
+    #git 方式依赖
+    git:
+      #仓库地址
+      url: https://github.com/zhaolongs/flutter_guidance_plugin.git
+      # 分支
+      ref: master
+  permission_handler: ^4.3.0
+  dio: 3.0.9
+  path_provider: 1.6.0
+  image_picker: ^0.6.3+4
   video_player: ^0.6.4
   # 弹框
-  fluttertoast: ^3.0.3
+  fluttertoast: 3.1.3
   cached_network_image: ^2.0.0
   #  下拉刷新组件
   pull_to_refresh: ^1.5.7

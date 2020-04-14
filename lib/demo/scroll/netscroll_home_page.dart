@@ -44,10 +44,8 @@ class ScrollHomePageState extends State with SingleTickerProviderStateMixin {
 
               ///true SliverAppBar 不会滑动
               pinned: true,
-
               ///是否随着滑动隐藏标题
               floating: true,
-
               ///SliverAppBar展开的高度
               expandedHeight: 160,
               flexibleSpace: FlexibleSpaceBar(
