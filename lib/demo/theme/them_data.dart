@@ -47,8 +47,6 @@ MaterialApp themDataFunction3() {
   );
 }
 MaterialApp themDataFunction4() {
-
-  Divider
   return MaterialApp(
     theme: ThemeData(
       brightness: Brightness.light,

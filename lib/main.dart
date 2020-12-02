@@ -41,6 +41,9 @@ class RottAppState extends State<RootApp> {
   Widget build(BuildContext context) {
     ///来构建
     return MaterialApp(
+      theme: ThemeData(
+        buttonTheme:
+      ),
       ///应用程序默认显示的页面
       home: IndexPage(),
       localizationsDelegates: [

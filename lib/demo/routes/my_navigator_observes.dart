@@ -24,7 +24,7 @@ class MyNavigatorObservers extends NavigatorObserver {
   void didPop(Route route, Route previousRoute) {
     super.didPop(route, previousRoute);
     print("didPop 目标的路由名称是 " + route.settings.name.toString());
-    print("didPop 目标的路由是否是InitialRoute配置的初始化路由 " + route.settings.isInitialRoute.toString());
+    print("didPop 目标的路由是否是InitialRoute配置的初始化路由 ");
     print("didPop 目标的路由携带的参数 " + route.settings.arguments.toString());
 
     if (previousRoute != null) {

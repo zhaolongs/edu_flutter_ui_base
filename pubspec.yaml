@@ -28,19 +28,19 @@ dependencies:
   cupertino_icons: ^0.1.2
 
   ## 极光推送插件
-  #  jpush_flutter:
-  #    # git 依赖方式
-  #    git:
-  #      # git 依赖的地址
-  #      url: git://github.com/jpush/jpush-flutter-plugin.git
-  #      # git 仓库中的分支
-  #      ref: master
+  jpush_flutter:
+    # git 依赖方式
+    git:
+      # git 依赖的地址
+      url: git://github.com/jpush/jpush-flutter-plugin.git
+      # git 仓库中的分支
+      ref: master
 
   # 极光推送插件
   #  jpush_flutter:
   #    path: ../jpush-flutter-plugin
 
-  jpush_flutter: 0.1.0
+#  jpush_flutter: 0.1.0
   #  custom_refresh_plugin:
   #    path: ../../custom_refresh_plugin/custom_refresh_plugin
   custom_refresh_plugin:
@@ -83,11 +83,17 @@ dependencies:
   #  Provide被设计为ScopedModel的替代品，同样也有和ScopedModel的易用性
   #  Provide提供了Provide.stream可以以处理流的方式处理数据，不过目前还存在一些问题
   provide: ^1.0.2
+  #代码块2-8-2-1
+  #最新版本可查看这里 https://pub.flutter-io.cn/packages/provider
+  #在这里的 ^号代表自动加载升级版的插件，如果需要使用固定版本，可以将^去掉，然后直接写上版本号就可以
+  provider: ^4.0.5
 
   extended_nested_scroll_view:
     git:
       url: https://github.com/fluttercandies/extended_nested_scroll_view.git
       ref: master
+
+
 
 dev_dependencies:
   flutter_test:

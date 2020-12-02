@@ -55,6 +55,20 @@ class IndexPageState extends BasePage<IndexPage> {
     readCacheData();
   }
 
+  var tset=0;
+
+
+
+
+
+  void test( va, ca){
+
+    int c = va;
+
+    Map<String,String > map = Map();
+
+  }
+
   ///异步读取数据 async
   void readCacheData() async {
     ///读取数据

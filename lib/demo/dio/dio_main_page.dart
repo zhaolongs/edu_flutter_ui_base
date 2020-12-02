@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:mdemo1/demo/dio/user_bean.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:permission_handler/permission_handler.dart';
 
 import 'common_response.dart';
 import 'cuestom_interceptor.dart';
@@ -56,7 +55,7 @@ class DioMainPageState extends State {
                 FlatButton(
                   child: Text("发起请求"),
                   onPressed: () {
-                    getRequestFunction4();
+                    postRequestFunction();
                   },
                 ),
                 SizedBox(
@@ -197,7 +196,8 @@ class DioMainPageState extends State {
   ///使用dio 下载文件
   void downApkFunction() async {
     /// 申请写文件权限
-    bool isPermiss = await checkPermissFunction();
+//    bool isPermiss = await checkPermissFunction();
+    bool isPermiss =true;
     if (isPermiss) {
       ///手机储存目录
       String savePath = await getPhoneLocalPath();
@@ -227,28 +227,28 @@ class DioMainPageState extends State {
   ///PermissionGroup.storage 对应的是
   ///android 的外部存储 （External Storage）
   ///ios 的Documents` or `Downloads`
-  checkPermissFunction() async {
-    if (Theme.of(context).platform == TargetPlatform.android) {
-      ///安卓平台中 checkPermissionStatus方法校验是否有储存卡的读写权限
-      PermissionStatus permission = await PermissionHandler()
-          .checkPermissionStatus(PermissionGroup.storage);
-      if (permission != PermissionStatus.granted) {
-        ///无权限那么 调用方法 requestPermissions 申请权限
-        Map<PermissionGroup, PermissionStatus> permissions =
-            await PermissionHandler()
-                .requestPermissions([PermissionGroup.storage]);
-        ///校验用户对权限申请的处理
-        if (permissions[PermissionGroup.storage] == PermissionStatus.granted) {
-          return true;
-        }
-      } else {
-        return true;
-      }
-    } else {
-      return true;
-    }
-    return false;
-  }
+//  checkPermissFunction() async {
+//    if (Theme.of(context).platform == TargetPlatform.android) {
+//      ///安卓平台中 checkPermissionStatus方法校验是否有储存卡的读写权限
+//      PermissionStatus permission = await PermissionHandler()
+//          .checkPermissionStatus(PermissionGroup.storage);
+//      if (permission != PermissionStatus.granted) {
+//        ///无权限那么 调用方法 requestPermissions 申请权限
+//        Map<PermissionGroup, PermissionStatus> permissions =
+//            await PermissionHandler()
+//                .requestPermissions([PermissionGroup.storage]);
+//        ///校验用户对权限申请的处理
+//        if (permissions[PermissionGroup.storage] == PermissionStatus.granted) {
+//          return true;
+//        }
+//      } else {
+//        return true;
+//      }
+//    } else {
+//      return true;
+//    }
+//    return false;
+//  }
 
   ///获取手机的存储目录路径
   ///getExternalStorageDirectory() 获取的是  android 的外部存储 （External Storage）
@@ -300,7 +300,7 @@ class DioMainPageState extends State {
         (HttpClient client) {
       client.findProxy = (uri) {
         ///这里的 192.168.0.102:8888就是我们的代理服务地址
-        return "PROXY 192.168.0.102:8888";
+        return "PROXY 192.168.40.116:8888";
       };
       client.badCertificateCallback =
           (X509Certificate cert, String host, int port) {
@@ -334,11 +334,22 @@ class DioMainPageState extends State {
 
   ///post 发送FormData
   void postRequestFunction() async {
-    String url = "http://192.168.0.102:8080/registerUser";
+    String url = "http://192.168.40.116:8080/registerUser";
 
     ///创建Dio
     Dio dio = new Dio();
 
+    ///添加自定义拦截器
+    dio.interceptors.add(CuestomInterceptor());
+
+    RequestOptions options = RequestOptions();
+//    options.headers={
+//      "content-type":"application/x-www-form-urlencoded",
+//      "content-encoding":"utf-8"
+//    };
+//    dio.options.contentType='application/x-www-form-urlencoded';
+    print("headers is ${dio.options.headers.toString()}");
+//    dio.options.headers[Headers.contentTypeHeader]='application/x-www-form-urlencoded';
     ///创建Map 封装参数
     Map<String, dynamic> map = Map();
     map['userName'] = "小明";
@@ -349,7 +360,7 @@ class DioMainPageState extends State {
     _setupPROXY(dio);
 
     ///发起post请求
-    Response response = await dio.post(url, data: formData);
+    Response response = await dio.post(url, data: formData,options: options);
 
     var data = response.data;
   }

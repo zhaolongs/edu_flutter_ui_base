@@ -1,6 +1,6 @@
 
 
-
+///2.9.5  配置自定义语言配置代理 MyLocationsLanguageDelegates的实现
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 
@@ -13,10 +13,11 @@ class MyLocationsLanguageDelegates extends LocalizationsDelegate<MyLocationsLang
 
   @override
   bool isSupported(Locale locale) {
-    ///判断是否支持 ['en','zh','he'] 其中的一个
-    return ['en','zh','he'].contains(locale.languageCode);
+    ///判断是否支持 ['en','zh'] 其中的一个
+    return ['en','zh'].contains(locale.languageCode);
   }
 
+  ///通过load方法关联我们自定义的多语言配制文件MyLocationsLanguages的
   @override
   Future<MyLocationsLanguages> load(Locale locale) {
     ///异步初始化MyLocationsLanguages
@@ -28,10 +29,10 @@ class MyLocationsLanguageDelegates extends LocalizationsDelegate<MyLocationsLang
    ///是否需要重载
     return false;
   }
-
 }
 
-///定义程序 多语言适配
+///2.9.5  配置自定义语言配置代理  多语言环境文字文件
+///定义程序中使用到的文字 多语言适配
 class MyLocationsLanguages {
 
   ///记录当前应用程序使用到的本地化配制
@@ -49,43 +50,20 @@ class MyLocationsLanguages {
 
     ///英文支持
     'en': {
-      'task title': 'Flutter Demo',
-      'titlebar title': 'Flutter Demo Home Page',
-      'click tip': 'You have pushed the demo.button this many times:',
-      'inc': 'Increment',
-      'click demo.button': 'click select demo.language',
-      'welcomes': 'China welcomes you',
-      'button1' : " China Language ",
-      'button2' : " English Language ",
-      'button3' : " Spain Language ",
+      'enlish' : "Select English",
+      'Chinese':"Select Chinese",
+      'ShowDate':"Show Date",
     },
     ///中文支持
     'zh': {
-      'task title': 'Flutter 示例',
-      'titlebar title': 'Flutter 示例主页面',
-      'click tip': '你一共点击了这么多次按钮：',
-      'inc': '增加',
-      'click demo.button': '点击切换',
-      'welcomes': '中国欢迎你',
-      'button1' : '简体中文',
-      'button2' : " 英文",
-      'button3' : " 西班牙 ",
+      'enlish' : "选择英语",
+      'Chinese':"选择中文",
+      'ShowDate':"显示日期",
     },
-    ///西班牙语支持
-    'he': {
-      'task title': 'Ejemplo de Flutter',
-      'titlebar title': 'Flutter 示例主页面',
-      'click tip': 'Has hecho clic en los botones tantas veces en total：',
-      'inc': '增加',
-      'click demo.button': 'Haga clic en cambiar',
-      'welcomes': 'Bienvenido a China',
-      'button1' : 'Chino simplificado ',
-      'button2' : "ingies",
-      'button3' : " Linares ",
-    }
   };
 
 
+  ///外部引用的方法
   get button1{
     return localValue[locale.languageCode]['button1'];
   }
@@ -94,5 +72,17 @@ class MyLocationsLanguages {
   }
   get button3{
     return localValue[locale.languageCode]['button3'];
+  }
+
+  get selectChinese{
+    return localValue[locale.languageCode]['Chinese'];
+  }
+
+  get selectEnlish{
+    return localValue[locale.languageCode]['enlish'];
+  }
+
+  get selectShowDate{
+    return localValue[locale.languageCode]['ShowDate'];
   }
 }
